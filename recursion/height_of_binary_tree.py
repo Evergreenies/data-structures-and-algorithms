@@ -73,6 +73,32 @@ class BinaryTree(Node):
         right_height = self.height(root.right)
         return 1 + max(left_height, right_height)
 
+    @staticmethod
+    def print_leaves(root) -> None:
+        """
+        Print only leaf nodes of the tree
+
+        :param root:
+        :type root:
+        :return:
+        :rtype:
+        """
+        if root is None:
+            return
+
+        # Check if current node is leaf node
+        if root.left is None or root.right is None:
+            print(root.val)
+            return
+
+        # Explore left subtree
+        if root.left is not None:
+            root.print_leaves(root.left)
+
+        # Explore right subtree
+        if root.right is not None:
+            root.print_leaves(root.right)
+
 
 def build_tree(elements: List[int]) -> BinaryTree:
     """
@@ -95,7 +121,11 @@ if __name__ == '__main__':
     tree_root = build_tree([4, 2, 5, 1, 3, 0])
     print("INORDER: ", tree_root.inoder())
     print(f"HEIGHT: {tree_root.height(tree_root)}")
+    print("LEAVES:")
+    tree_root.print_leaves(tree_root)
 
     tree_root = build_tree([17, 4, 1, 20, 9, 23, 18, 34])
     print("INORDER: ", tree_root.inoder())
     print(f"HEIGHT: {tree_root.height(tree_root)}")
+    print("LEAVES:")
+    tree_root.print_leaves(tree_root)
