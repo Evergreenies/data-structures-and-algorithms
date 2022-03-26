@@ -10,7 +10,6 @@ def recursion_series(start: int, target: int, steps: int = 1):
         return 0
 
     print(start)
-
     return recursion_series(start + steps, target, steps)
 
 
