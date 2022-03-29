@@ -7,6 +7,7 @@ from typing import List
 def stack_sorting(stack: List) -> None:
     """
     Sorting a stack using recursion
+
     :param stack:
     :type stack:
     :return:
