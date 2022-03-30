@@ -45,4 +45,8 @@ def tower_of_hanoi(source: str, destination: str, helper: str, size: int) -> Non
 
 
 if __name__ == '__main__':
+    print("With 3 Disks")
     tower_of_hanoi('SOURCE', "DESTINATION", "HELPER", 3)
+
+    print("\n\nWith 5 Disks")
+    tower_of_hanoi('SOURCE', "DESTINATION", "HELPER", 5)
