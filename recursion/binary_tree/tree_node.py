@@ -43,7 +43,7 @@ class BinaryTree(Node):
                 self.right = BinaryTree(val)
 
 
-def build_tree(elements: List[Any]) -> BinaryTree:
+def build_tree(elements: List[Any]) -> BinaryTree | None:
     """
     Build tree by inserting list of element in it
 
@@ -52,6 +52,9 @@ def build_tree(elements: List[Any]) -> BinaryTree:
     :return:
     :rtype:
     """
+    if len(elements) == 0:
+        return None
+
     root = BinaryTree(elements[0])
 
     for i in range(1, len(elements)):
