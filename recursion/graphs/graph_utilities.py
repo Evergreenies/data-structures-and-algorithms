@@ -15,9 +15,9 @@ def build_graph(edges: List) -> Dict:
     for edge in edges:
         a, b = edge
 
-        if not (a in graph):
+        if a not in graph:
             graph[a] = []
-        if not (b in graph):
+        if b not in graph:
             graph[b] = []
 
         graph[a].append(b)
