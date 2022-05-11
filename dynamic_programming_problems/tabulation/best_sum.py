@@ -11,6 +11,16 @@ from typing import List
 
 
 def best_sum(target_sum: int, numbers: List) -> List | None:
+    """
+    Best Sum Problem
+
+    :param target_sum:
+    :type target_sum:
+    :param numbers:
+    :type numbers:
+    :return:
+    :rtype:
+    """
     dp_table = [None for _ in range(target_sum + 1)]
     dp_table[0] = []  # noqa
 
