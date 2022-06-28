@@ -85,11 +85,12 @@ def max_sum_subarray_dynamic_programming(arr: list) -> int:
     :rtype:
     """
     array = [0 for _ in range(len(arr) + 1)]
+    array[0] = -math.inf
 
     for index in range(1, len(array)):
         array[index] = max(array[index - 1] + arr[index - 1], arr[index - 1])
 
-    max_sum = -math.inf
+    max_sum = array[0]
     for index in range(1, len(array)):
         if max_sum < array[index]:
             max_sum = array[index]
